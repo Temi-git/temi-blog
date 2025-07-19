@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "vercel_build.sh", "use": "@vercel/static-build", "config": { "distDir": "public" } }
+  ],
+  "routes": [
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/(.*)", "dest": "/vercel_build.sh" }
+  ]
+} 
